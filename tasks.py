@@ -5,11 +5,6 @@ from RPA.Tables import Tables
 from RPA.PDF import PDF
 from RPA.Archive import Archive
 import os
-# import logging
-
-# # Set up logging
-# logging.basicConfig(level=logging.INFO)
-# logger = logging.getLogger(__name__)
 
 @task
 def order_robots_from_RobotSpareBin():

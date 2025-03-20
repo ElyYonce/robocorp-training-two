@@ -2,8 +2,11 @@
 # https://github.com/robocorp/rcc/blob/master/docs/recipes.md#what-is-in-robotyaml
 
 tasks:
-  Run Task:
-    shell: python -m robocorp.tasks run tasks.py
+  Archive Receipts:
+    shell: python -m robocorp.tasks run tasks.py -t order_robots_from_RobotSpareBin_Bot
+
+  Archive Receipts Assistant:
+    shell: python -m robocorp.tasks run tasks.py -t order_robots_from_RobotSpareBin_Assistant
 
 environmentConfigs:
   - environment_windows_amd64_freeze.yaml

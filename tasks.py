@@ -7,8 +7,9 @@ from RPA.Archive import Archive
 from RPA.Assistant import Assistant
 import os
 
+
 @task
-def order_robots_from_RobotSpareBin():
+def order_robots_from_RobotSpareBin_Assistant():
     """
     Orders robots from RobotSpareBin Industries Inc.
     Saves the order HTML receipt as a PDF file.
@@ -17,6 +18,25 @@ def order_robots_from_RobotSpareBin():
     Creates ZIP archive of the receipts and the images.
     """
     user_input()
+    orders = get_orders()
+    close_annoying_modal()
+    for order in orders:
+        fill_the_form(order)
+        preview_the_order()
+        submit_the_order(order)
+        order_another_robot()
+    archive_receipts()
+@task
+def order_robots_from_RobotSpareBin_Bot():
+    """
+    Orders robots from RobotSpareBin Industries Inc.
+    Saves the order HTML receipt as a PDF file.
+    Saves the screenshot of the ordered robot.
+    Embeds the screenshot of the robot to the PDF receipt.
+    Creates ZIP archive of the receipts and the images.
+    """
+    user_input()
+    open_robot_order_website()
     orders = get_orders()
     close_annoying_modal()
     for order in orders:
